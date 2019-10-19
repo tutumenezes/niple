@@ -1,0 +1,67 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    background: url(../src/bg-1.png);
+    background-size: cover; background-position: center bottom;
+}
+
+#niple {
+
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat; 
+
+    animation-name: niple-loop;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    transform-origin: bottom center;
+    transition: all ease-out .4s;
+}
+
+.niple--top {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+}
+
+
+[data-moving='left'] .balloon--line {
+    border-width: 0 1px 0 0;
+    transform-origin: bottom right;
+    right: 50%;
+    left: auto;
+}
+[data-moving='right'] .balloon--line {
+    transform-origin: bottom left;
+}
+
+[data-niple='true'] {
+    background: url(../src/bg-full.png);
+    background-size: cover;
+    background-position: center bottom;
+}
+
+[data-niple='true'] #niple {
+    opacity: 0;
+}
+
+@keyframes niple-loop {
+    0% {background: url(../src/niple-0.png);background-size: cover; background-position: center bottom;}
+    20% {background: url(../src/niple-2.png);background-size: cover; background-position: center bottom;}
+    40% {background: url(../src/niple-1.png);background-size: cover; background-position: center bottom;}
+    80% {background: url(../src/niple-3.png);background-size: cover; background-position: center bottom;}
+    100% {background: url(../src/niple-0.png);background-size: cover; background-position: center bottom;}
+}
